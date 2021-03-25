@@ -40,7 +40,8 @@ header {
   margin-top: 0;
   color: white;
 }
-.content-wrapper select {
+.content-wrapper select,
+button {
   font-size: 1rem;
 }
 
