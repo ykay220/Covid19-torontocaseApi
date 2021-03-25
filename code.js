@@ -209,17 +209,37 @@ const select = document.querySelector('#neighbourhood-select')
 btn.addEventListener('click', () =>{ 
     let chosenHood = select.value;
     let h2Totalcases = document.querySelector('#h2-totalcases')
+     let ulOutcome = document.querySelector('#ul-outcomewrap')
+    let ul = document.querySelector('#ul-wrap')
     axios.get('http://127.0.0.1:5500/COVID19%20cases.json')
     .then (res=>{
         console.log(res.data);
         let caseCount = 0;
         let fatal = 0;
+        let active = 0;
+        let resolved = 0;
+        let female = 0;
+        let male = 0;
         res.data.forEach(el => {
            if(el['Neighbourhood Name'] === chosenHood) {
                caseCount += 1
                if (el['Outcome'] === 'FATAL'){
                 fatal += 1;
-            }
+             }
+             if (el['Outcome'] === 'ACTIVE'){
+                active += 1;
+             }
+             if (el['Outcome'] === 'RESOLVED'){
+                resolved += 1;
+             }
+
+             if(el['Client Gender'] === "FEMALE"){
+                female += 1;
+             }
+
+             if(el['Client Gender'] === "MALE"){
+                male += 1;
+             }
 
            }
         
@@ -227,9 +247,11 @@ btn.addEventListener('click', () =>{
         
         
         }); 
-        console.log(fatal)
+        ulOutcome.innerHTML =`<li>ACTIVE CASES: <span>${active}</span></li> <li>RESOLVED CASES: <span>${resolved}</span></li> </li> <li>FATAL CASES: <span>${fatal}</span></li>`
+        ul.innerHTML = `<li>FEMALE CASES: <span>${female}</span></li> <li>MALE CASES: <span>${male}</span></li>`
+        // ul.innerHTML += `<li>the total female is ${male}</li>`
         h2Totalcases.innerHTML = caseCount;
-
+        
         // alert(caseCount)
 
         // console.log(`Male total is ${maleTotal} and Female total is ${femaleTotal} `)
