@@ -208,7 +208,7 @@ const select = document.querySelector('#neighbourhood-select')
 
 btn.addEventListener('click', () =>{ 
     let chosenHood = select.value;
-    
+    let h2Totalcases = document.querySelector('#h2-totalcases')
     axios.get('http://127.0.0.1:5500/COVID19%20cases.json')
     .then (res=>{
         console.log(res.data);
@@ -217,16 +217,21 @@ btn.addEventListener('click', () =>{
         res.data.forEach(el => {
            if(el['Neighbourhood Name'] === chosenHood) {
                caseCount += 1
+               if (el['Outcome'] === 'FATAL'){
+                fatal += 1;
+            }
 
            }
-           if (el['Neighbourhood Name'] === chosenHood && el['Outcome'] === 'FATAL'){
-            fatal += 1;
+        
             
-        }
+        
         
         }); 
         console.log(fatal)
-        alert(caseCount)
+        h2Totalcases.innerHTML = caseCount;
+
+        // alert(caseCount)
+
         // console.log(`Male total is ${maleTotal} and Female total is ${femaleTotal} `)
         // console.log(neighbourhoodNames)
         // console.log(outcome)
