@@ -162,3 +162,22 @@ p {
 span {
   color: #e74e84;
 }
+
+@media only screen and (max-width: 768px) {
+  .content-wrapper {
+    width: 100%;
+  }
+  .content-wrapper h1 {
+    font-size: 1.5rem;
+  }
+  .content-wrapper p {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .content-wrapper button {
+    font-size: 1.2rem;
+  }
+  .content-wrapper select {
+    padding: 5px;
+  }
+}
