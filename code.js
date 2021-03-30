@@ -197,7 +197,7 @@ const select = document.querySelector('#neighbourhood-select')
 //         if (outcome[result] === undefined){
 //             // console.log(`first time defining this key ${result}`);
 //             outcome[result] = 0;
-//             outcome[result] += 1;
+//             outcome[result] += 1;.20
 //         } else {
 //             outcome[result] += 1;
 //         }
