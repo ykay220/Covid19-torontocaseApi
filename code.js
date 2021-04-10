@@ -188,20 +188,42 @@ const select = document.querySelector('#neighbourhood-select')
     "Alderwood",
     "Old East York"
  ];
+
+
+
+const newArray = neighbourhood.map(name=>{
+   let eachObject = {
+                  Neighbourhood: name,
+                  Fatal: 0,
+                  Active: 0
+     
+                                  }
+    return eachObject
+})
+
+console.log(newArray)
+
+
+
+
+
 //  let outcome = {} 
-//  let name = el['Neighbourhood Name'];
-//         neighbourhoodNames[name] = true;
+// //  let name = el['Neighbourhood Name'];
+//       //   neighbourhoodNames[name] = true;
 
 //         // console.log(outcome);
 //         let result = el['Outcome'];
 //         if (outcome[result] === undefined){
 //             // console.log(`first time defining this key ${result}`);
 //             outcome[result] = 0;
-//             outcome[result] += 1;.20
+//             outcome[result] += 1;
 //         } else {
 //             outcome[result] += 1;
 //         }
 //         // outcome[result] = true;
+
+
+
  select.innerHTML = neighbourhood.map(el => {
     return `<option value="${el}">${el}</option>`
 }).join(' ');
@@ -244,7 +266,7 @@ btn.addEventListener('click', () =>{
            }
         
             
-        
+         
         
         }); 
         ulOutcome.innerHTML =`<li>ACTIVE CASES: <span>${active}</span></li> <li>RESOLVED CASES: <span>${resolved}</span></li> </li> <li>FATAL CASES: <span>${fatal}</span></li>`
