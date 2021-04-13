@@ -44,6 +44,15 @@ const select = document.querySelector('#neighbourhood-select')
 
 
 
+const navList = document.querySelector('#navi-list');
+const toggleButton = document.querySelector('#toggle-button');
+
+toggleButton.addEventListener('click', () => {
+    navList.classList.toggle('active');
+});
+
+
+
 
  const neighbourhood = [
     "Willowdale East",

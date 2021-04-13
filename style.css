@@ -158,6 +158,70 @@ span {
   font-size: 0.7rem;
 }
 
+.navbar li,
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: rgb(109, 175, 254);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  padding: 0px 10px;
+  min-height: 50px;
+}
+
+nav .nav-list {
+  list-style: none;
+}
+
+.nav-list > li {
+  display: inline-block;
+  position: relative;
+  /* padding: 20px 10px; */
+  /* border: 1px solid white; */
+}
+
+.nav-list li {
+  list-style: none;
+  z-index: 1;
+
+  /* padding: 20px 10px; */
+  /* border: 1px solid white; */
+}
+
+nav .nav-list li a {
+  /* display: block; */
+  padding: 20px 10px;
+  /* border: 1px solid red; */
+  transition: all 0.3s ease-out;
+  transition-property: color;
+}
+
+.navbar a:hover {
+  color: #e74e84;
+  /* background-color: #292826; */
+}
+
+.icon {
+  height: 39px;
+  cursor: pointer;
+  margin-top: 3px;
+}
+
+.menu {
+  display: none;
+}
+.menu-line {
+  width: 20px;
+  height: 3px;
+  background-color: white;
+  margin-bottom: 4px;
+}
+
 @media only screen and (max-width: 768px) {
   .content-wrapper {
     width: 100%;
@@ -174,5 +238,51 @@ span {
   }
   .content-wrapper select {
     padding: 5px;
+  }
+
+  .menu {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 17px;
+  }
+  .navbar .nav-list li {
+    display: block;
+  }
+  nav .nav-list li a {
+    display: block;
+    padding: 10px 0px;
+    border-top: 1px solid white;
+  }
+  .nav-list {
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    display: none;
+    list-style: none;
+    margin-top: 50px;
+    padding: 0;
+  }
+
+  .navbar .container-icon {
+    width: 100%;
+    top: -0.6%;
+    position: absolute;
+  }
+
+  .icon {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .active {
+    display: block;
+  }
+  .dropdown a {
+    border-bottom: 1px solid white;
+  }
+
+  .navbar {
+    padding: 0;
   }
 }
