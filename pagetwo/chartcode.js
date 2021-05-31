@@ -207,7 +207,7 @@
 
 
  
- axios.get('/COVID19%20cases.json')
+ axios.get('/covidcases.json')
     .then (res=>{
      createChart(res);
       

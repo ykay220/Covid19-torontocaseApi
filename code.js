@@ -242,7 +242,7 @@ btn.addEventListener('click', () =>{
     let h2Totalcases = document.querySelector('#h2-totalcases')
      let ulOutcome = document.querySelector('#ul-outcomewrap')
     let ul = document.querySelector('#ul-wrap')
-    axios.get('/COVID19%20cases.json')
+    axios.get('/covidcases.json')
     .then (res=>{
         console.log(res.data);
         let caseCount = 0;
