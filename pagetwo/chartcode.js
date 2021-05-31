@@ -207,7 +207,7 @@
 
 
  
- axios.get('http://127.0.0.1:5500/COVID19%20cases.json')
+ axios.get('/COVID19%20cases.json')
     .then (res=>{
      createChart(res);
       
